@@ -1,0 +1,11 @@
+module CSDL [system] {
+       header "/usr/include/SDL2/SDL.h"
+       link "SDL2"
+       export *
+}
+
+module CSDLShim [system] {
+	umbrella header "sdl-shim.h"
+	link "sdlshim"
+	export *
+}

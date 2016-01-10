@@ -1,4 +1,5 @@
 import CSDL
+import CSDLShim
 
 let options: UInt32 = UInt32(SDL_INIT_VIDEO)
 
@@ -6,17 +7,24 @@ if SDL_Init(options) < 0 {
     print("Unable to init SDL")
 }
 
-var window: UnsafeMutablePointer<SDL_Window>
+// SDL_VideoInit(NULL);
+
+let centeredFlag = getWindowPosCentered();
+let opengl = getOpenGLFlags();
+
+var window: SDLWindow
 window = SDL_CreateWindow(
         "An SDL window",
-        SDL_WINDOWPOS_CENTERED,
-        SDL_WINDOWPOS_CENTERED,
+        centeredFlag,
+        centeredFlag,
         800,
         600,
-        SDL_WINDOW_OPENGL
+        opengl
              )
 
 var maincontext: SDL_GLContext
+
+SDL_Delay(5000)
 
 SDL_Quit()
 print( "Quitting ")
