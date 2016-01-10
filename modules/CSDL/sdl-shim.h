@@ -4,6 +4,7 @@
 
 typedef SDL_Window * SDLWindow;
 
+extern int getSDLContextProfileCore();
 
 extern int getWindowPosCentered();
 

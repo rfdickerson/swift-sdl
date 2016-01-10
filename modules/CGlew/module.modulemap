@@ -1,0 +1,8 @@
+module CGlew [system] {
+       header "/usr/include/GL/glew.h"
+       link "GLEW"
+	link "GL"
+	link "GLU"
+       export *
+}
+
